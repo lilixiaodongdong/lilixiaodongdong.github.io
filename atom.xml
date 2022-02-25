@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-09T07:47:34.506Z</updated>
+  <updated>2022-02-25T13:10:56.040Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sql函数与使用</title>
+    <link href="http://example.com/2022/01/26/sql%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2022/01/26/sql%E5%87%BD%E6%95%B0/</id>
+    <published>2022-01-26T07:22:00.000Z</published>
+    <updated>2022-02-25T13:10:56.040Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一-sql的基本函数"><a href="#一-sql的基本函数" class="headerlink" title="一.sql的基本函数"></a>一.sql的基本函数</h4><ol><li><p>left()函数：  left(database(),1)=‘s’                     left(a,b)从左侧截取a的前b位，正确则返回1，错误则返回0</p></li><li><p>regexp函数：select user() regexp ‘r’                 user()的结果是root，regexp为匹配root的正则表达式</p><p>————</p></li><li><p>like函数： select user() like ‘ro%’                        匹配与regexp相似。</p><p>————</p></li><li><p>substr(a,b,c)   select substr() XXXX                       substr(a,b,c)从位置b开始，截取a字符串c位长度</p><p>————</p></li><li><p>ascii()        ASSCII码 与数字和字母进行转换</p><p>————</p></li><li><p>updatexml函数    </p><p>updatexml函数<br>UPDATEXML (XML_document, XPath_string, new_value);<br>第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>第三个参数：new_value，String格式，替换查找到的符合条件的数据</p><p>————                        </p><h4 id="二-在MySQL工具下进行使用。"><a href="#二-在MySQL工具下进行使用。" class="headerlink" title="二.在MySQL工具下进行使用。"></a>二.在MySQL工具下进行使用。</h4><p>对于security数据库：（进行数值返回判断）<br> select left(database(),1)=‘s’;   判断前1位是否是s<br> select database() regexp ‘s’;  匹配第一个字符是否是 s<br> select database() like ‘s%’;     匹配第一个字符是否是 s<br> select substr((select database()),1,1)=’s’; 匹配第一个字符是否是 s<br> select substr((select database()),1,3)= ‘sec’; 匹配前三个个字符是否是 sec<br> select ascii(substr((select database()),1,1));    直接回显115  或者是：<br> select ascii(substr((select database()),1,1)) &gt; 110;  如果大于110，就会返回1，否则返回0.</p></li></ol><p>————</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;一-sql的基本函数&quot;&gt;&lt;a href=&quot;#一-sql的基本函数&quot; class=&quot;headerlink&quot; title=&quot;一.sql的基本函数&quot;&gt;&lt;/a&gt;一.sql的基本函数&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;left()函数：  left(database(),1)</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
