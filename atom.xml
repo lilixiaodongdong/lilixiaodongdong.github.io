@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-25T13:45:52.130Z</updated>
+  <updated>2022-02-25T13:59:29.337Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小知识</title>
+    <link href="http://example.com/2022/02/25/%E5%B0%8F%E7%9F%A5%E8%AF%86-1/"/>
+    <id>http://example.com/2022/02/25/%E5%B0%8F%E7%9F%A5%E8%AF%86-1/</id>
+    <published>2022-02-25T13:58:42.000Z</published>
+    <updated>2022-02-25T13:59:29.337Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-在robort-txt中藏着不允许和允许探测的文件名"><a href="#1-在robort-txt中藏着不允许和允许探测的文件名" class="headerlink" title="1.在robort.txt中藏着不允许和允许探测的文件名"></a>1.在robort.txt中藏着不允许和允许探测的文件名</h2><h2 id="2-ssh使远程计算机通过ss客服端登入本地服务器，实现远程操作"><a href="#2-ssh使远程计算机通过ss客服端登入本地服务器，实现远程操作" class="headerlink" title="2.ssh使远程计算机通过ss客服端登入本地服务器，实现远程操作"></a>2.ssh使远程计算机通过ss客服端登入本地服务器，实现远程操作</h2><h2 id="3-audit-审计-指按照一定安全策略，利用记录、系统活动和用户活动等信息，检查、审查和检验操作事件的环境及活动，从而发现系统漏洞的过程"><a href="#3-audit-审计-指按照一定安全策略，利用记录、系统活动和用户活动等信息，检查、审查和检验操作事件的环境及活动，从而发现系统漏洞的过程" class="headerlink" title="3.audit(审计)指按照一定安全策略，利用记录、系统活动和用户活动等信息，检查、审查和检验操作事件的环境及活动，从而发现系统漏洞的过程"></a>3.audit(审计)指按照一定安全策略，利用记录、系统活动和用户活动等信息，检查、审查和检验操作事件的环境及活动，从而发现系统漏洞的过程</h2><h2 id="4-crawl-爬行-指顺这内部链接访问网站内页，再顺着导出链接访问其他网站"><a href="#4-crawl-爬行-指顺这内部链接访问网站内页，再顺着导出链接访问其他网站" class="headerlink" title="4.crawl(爬行)指顺这内部链接访问网站内页，再顺着导出链接访问其他网站"></a>4.crawl(爬行)指顺这内部链接访问网站内页，再顺着导出链接访问其他网站</h2><h2 id="HTTP-Referer-告知服务器请求来源（浏览器自动加上）"><a href="#HTTP-Referer-告知服务器请求来源（浏览器自动加上）" class="headerlink" title="HTTP Referer: 告知服务器请求来源（浏览器自动加上）"></a>HTTP Referer: 告知服务器请求来源（浏览器自动加上）</h2><h3 id="302或301状态码表示跳转"><a href="#302或301状态码表示跳转" class="headerlink" title="302或301状态码表示跳转"></a>302或301状态码表示跳转</h3><h3 id="Cookie-服务器颁发的凭证"><a href="#Cookie-服务器颁发的凭证" class="headerlink" title="Cookie: 服务器颁发的凭证"></a>Cookie: 服务器颁发的凭证</h3><h3 id="网页-HTML-JS-CSS"><a href="#网页-HTML-JS-CSS" class="headerlink" title="网页=HTML+JS+CSS"></a>网页=HTML+JS+CSS</h3><h2 id="JS-对网页添加动态效果"><a href="#JS-对网页添加动态效果" class="headerlink" title="JS: 对网页添加动态效果"></a>JS: 对网页添加动态效果</h2><h2 id="CSS-给网页添加样式和图片"><a href="#CSS-给网页添加样式和图片" class="headerlink" title="CSS: 给网页添加样式和图片"></a>CSS: 给网页添加样式和图片</h2><h2 id="Html-超文本标记语言能加载CSS图片和JS样式"><a href="#Html-超文本标记语言能加载CSS图片和JS样式" class="headerlink" title="Html: 超文本标记语言能加载CSS图片和JS样式"></a>Html: 超文本标记语言能加载CSS图片和JS样式</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-在robort-txt中藏着不允许和允许探测的文件名&quot;&gt;&lt;a href=&quot;#1-在robort-txt中藏着不允许和允许探测的文件名&quot; class=&quot;headerlink&quot; title=&quot;1.在robort.txt中藏着不允许和允许探测的文件名&quot;&gt;&lt;/a&gt;1.</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>1</title>
